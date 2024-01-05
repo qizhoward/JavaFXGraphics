@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeItem?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.my.HelloController">
+   <children>
+      <VBox prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File(F)">
+                  <items>
+                        <MenuItem mnemonicParsing="true" text="New" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="true" onAction="#OpenFile" text="Open..." />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#SaveAs" text="Save As..." />
+                        <MenuItem mnemonicParsing="false" text="Import" />
+                        <MenuItem mnemonicParsing="false" text="Export" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Print" />
+                        <MenuItem mnemonicParsing="false" text="Preferences..." />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit(E)">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" text="Move" />
+                        <MenuItem mnemonicParsing="false" text="Rotate" />
+                        <MenuItem mnemonicParsing="false" text="Scale" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Tools(T)">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Scene Explorer..." />
+                        <MenuItem mnemonicParsing="false" text="Layer Explorer..." />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Views(V)">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ViewCube" text="ViewCube" />
+                        <MenuItem mnemonicParsing="false" text="xView" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Create(C)">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Box" />
+                        <MenuItem mnemonicParsing="false" text="Circle" />
+                        <MenuItem mnemonicParsing="false" text="Freehand" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Rendering(R)">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Render" />
+                        <MenuItem mnemonicParsing="false" text="Effects..." />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Customize(C)">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#HotkeyEditor" text="Hotkey Editor..." />
+                        <MenuItem mnemonicParsing="false" text="Lock UI Layout" />
+                        <MenuItem mnemonicParsing="false" text="Plug-in Manager..." />
+                        <MenuItem mnemonicParsing="false" onAction="#PreferencsView" text="Preferences" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help(H)">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="What's new" />
+                        <MenuItem mnemonicParsing="false" onAction="#AboutView" text="About" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar>
+              <items>
+                  <Button mnemonicParsing="false" text="Undo" />
+                  <Button mnemonicParsing="false" text="Redo" />
+                <Button mnemonicParsing="false" text="Move" />
+                  <Button mnemonicParsing="false" text="layer" />
+                  <ComboBox prefWidth="150.0" />
+                  <Button fx:id="toggleButton" mnemonicParsing="false" onAction="#toggleTreeView" text="SenceTree" />
+              </items>
+            </ToolBar>
+            <AnchorPane VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox layoutX="-5.0" prefHeight="651.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TreeView fx:id="treeView">
+                         <TreeItem value="Sence">
+                             <children>
+                                 <TreeItem value="Folder 1">
+                                     <children>
+                                         <TreeItem value="File 1" />
+                                         <TreeItem value="File 2" />
+                                     </children>
+                                 </TreeItem>
+                                 <TreeItem value="Folder 2">
+                                     <children>
+                                         <TreeItem value="File 3" />
+                                         <TreeItem value="File 4" />
+                                     </children>
+                                 </TreeItem>
+                             </children>
+                         </TreeItem>
+                      </TreeView>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Canvas fx:id="canvas" height="652.0" width="915.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

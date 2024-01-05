@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="30" updatableVersionMin="" updatableVersionMax="" fileName="qizhiwoniu_windows-x64_1_1_0.exe" newVersion="1.1.0" newMediaFileId="30" fileSize="140863488" md5Sum="f5643f827031d2bce50bb18f2a3a8c3d" sha256Sum="98c61e37c35485a637387412d2e66d427c9a7cf7b145b433a0add2d96344ab3a" bundledJre="windows-amd64-21.tar.gz" archive="false" singleBundle="false">
+    <comment language="zh_CN" />
+  </entry>
+</updateDescriptor>
